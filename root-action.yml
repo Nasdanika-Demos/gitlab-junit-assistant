@@ -4,20 +4,15 @@ Action:
     # location: https://github.com/Nasdanika-Demos - breaks the site in 2024.8.0, will be fixed in subsequent releases
     children:
       - Action:
-          location: ${base-uri}search.html
-          icon: fas fa-search
-          text: Search
+          location: ${base-uri}index.html
+          text: GitLab declarative command pipeline for GenAI-assisted JUnit test generation
           content:
             Interpolator:
               source:
-                exec.content.Resource: classpath://org/nasdanika/html/model/app/gen/search.html
-      - Action:
-          location: ${base-uri}glossary.html
-          text: Glossary
-          content:
-            Interpolator:
-              source:
-                exec.content.Resource: classpath://org/nasdanika/html/model/app/gen/semantic-info.html
+                Markdown:
+                  style: true
+                  source:
+                    exec.content.Resource: README.md
     navigation:
       - Action:
           text: Source
